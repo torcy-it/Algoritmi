@@ -1,0 +1,28 @@
+Widths
+* 2 4 
+2 * 1 
+4 1 * 
+
+Costs matrix
+* 2 4 
+2 * 2 
+4 2 * 
+
+Paths matrix
+- - - 
+- - 0 
+- 0 - 
+
+The islands that each road crosses
+Path from 0 to 1: 
+0 -> 1
+Path from 0 to 2: 
+0 -> 2
+Path from 1 to 0: 
+1 -> 0
+Path from 1 to 2: 
+1 -> 0 -> 2
+Path from 2 to 0: 
+2 -> 0
+Path from 2 to 1: 
+2 -> 0 -> 1

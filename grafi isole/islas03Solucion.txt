@@ -1,0 +1,72 @@
+7
+0 -> 1 2
+0 -- 2 3
+1 -> 2 8
+1 -- 3 4
+4 -> 1 4
+2 -> 4 3
+3 -> 6 5
+
+Anchuras (inicial):
+
+ *  2  3  -  -  -  - 
+ -  *  8  4  -  -  - 
+ 3  -  *  -  3  -  - 
+ -  4  -  *  -  -  5 
+ -  4  -  -  *  -  - 
+ -  -  -  -  -  *  - 
+ -  -  -  -  -  -  * 
+
+Anchuras (final):
+
+ *  3  3  3  3  -  3 
+ 3  *  8  4  3  -  4 
+ 3  3  *  3  3  -  3 
+ 3  4  4  *  3  -  5 
+ 3  4  4  4  *  -  4 
+ -  -  -  -  -  *  - 
+ -  -  -  -  -  -  * 
+
+Caminos:
+
+ -  4  -  4  2  -  4 
+ 2  -  -  -  2  -  3 
+ -  4  -  4  -  -  4 
+ 2  -  1  -  2  -  - 
+ 2  -  1  1  -  -  3 
+ -  -  -  -  -  -  - 
+ -  -  -  -  -  -  - 
+
+Camino de 0 a 1:  0 -> 2 -> 4 -> 1
+Camino de 0 a 2:  0 -> 2
+Camino de 0 a 3:  0 -> 2 -> 4 -> 1 -> 3
+Camino de 0 a 4:  0 -> 2 -> 4
+Camino de 0 a 5:  No hay
+Camino de 0 a 6:  0 -> 2 -> 4 -> 1 -> 3 -> 6
+Camino de 1 a 0:  1 -> 2 -> 0
+Camino de 1 a 2:  1 -> 2
+Camino de 1 a 3:  1 -> 3
+Camino de 1 a 4:  1 -> 2 -> 4
+Camino de 1 a 5:  No hay
+Camino de 1 a 6:  1 -> 3 -> 6
+Camino de 2 a 0:  2 -> 0
+Camino de 2 a 1:  2 -> 4 -> 1
+Camino de 2 a 3:  2 -> 4 -> 1 -> 3
+Camino de 2 a 4:  2 -> 4
+Camino de 2 a 5:  No hay
+Camino de 2 a 6:  2 -> 4 -> 1 -> 3 -> 6
+Camino de 3 a 0:  3 -> 1 -> 2 -> 0
+Camino de 3 a 1:  3 -> 1
+Camino de 3 a 2:  3 -> 1 -> 2
+Camino de 3 a 4:  3 -> 1 -> 2 -> 4
+Camino de 3 a 5:  No hay
+Camino de 3 a 6:  3 -> 6
+Camino de 4 a 0:  4 -> 1 -> 2 -> 0
+Camino de 4 a 1:  4 -> 1
+Camino de 4 a 2:  4 -> 1 -> 2
+Camino de 4 a 3:  4 -> 1 -> 3
+Camino de 4 a 5:  No hay
+Camino de 4 a 6:  4 -> 1 -> 3 -> 6
+Camino de 5 a cualquiera:  No hay
+Camino de 6 a cualquiera:  No hay
+

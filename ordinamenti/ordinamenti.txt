@@ -1,0 +1,134 @@
+public class MergeSort {
+  
+  public static void mergeSort(int[] arr) {
+    if (arr == null || arr.length <= 1) {
+      return; // Base case: already sorted or empty
+    }
+    
+    int mid = arr.length / 2;
+    int[] left = new int[mid];
+    int[] right = new int[arr.length - mid];
+    
+    // Split the array into two halves
+    for (int i = 0; i < mid; i++) {
+      left[i] = arr[i];
+    }
+    for (int i = mid; i < arr.length; i++) {
+      right[i - mid] = arr[i];
+    }
+    
+    // Recursively sort the two halves
+    mergeSort(left);
+    mergeSort(right);
+    
+    // Merge the sorted halves
+    merge(arr, left, right);
+  }
+  
+  private static void merge(int[] arr, int[] left, int[] right) {
+    int i = 0; // Index for left array
+    int j = 0; // Index for right array
+    int k = 0; // Index for merged array
+    
+    while (i < left.length && j < right.length) {
+      if (left[i] <= right[j]) {
+        arr[k++] = left[i++];
+      } else {
+        arr[k++] = right[j++];
+      }
+    }
+    
+    // Copy the remaining elements of left and right arrays
+    while (i < left.length) {
+      arr[k++] = left[i++];
+    }
+    while (j < right.length) {
+      arr[k++] = right[j++];
+    }
+  }
+  
+	*********************************++	QUICKSORT *****************************+++
+
+	/** Deja el	pivote en una posicion tal que a su izquierda no 
+		hay ningún mayor, ni a la derecha ningun menor.
+		Es un proceso lineal O(n).  
+	 */
+	private int particion(int iz, int de) 
+	{
+		int i, pivote;
+		intercambiar ((iz+de)/2,iz); // intercambiar (getMediana3(iz, de, (iz+de)/2) ,iz);
+		//el pivote es el de centro y se cambia con el primero
+		pivote= this.elements[iz]; 
+		i= iz;
+		for (int s= iz+1; s <= de; s++) 
+			if (this.elements[s] <= pivote) 
+			{
+				i++;
+				intercambiar(i,s);
+			}
+		intercambiar(iz,i);//se restituye el pivote donde debe estar
+		return i; // retorna la posicion en que queda el pivote 
+	}
+
+	/**
+	 * Ordenación por el método rápido (quicksort)
+	 * Método divide y vencerás de complejidad estudiada en clase
+	 */  
+	private void rapirec (int iz, int de) 
+	{
+		int m;
+		if (de>iz) 
+		{
+			m=particion(iz,de);
+			rapirec(iz,m-1);
+			rapirec(m+1,de);
+		}
+	}
+
+
+
+	protected void intercambiar(int i, int j)
+	{
+		int t;
+		t = this.elements[i];
+		this.elements[i] = this.elements[j];
+		this.elements[j] = t;
+	}
+
+
+	private  int getMediana3(int iz, int de, int cen){
+		//System.out.println(iz + " "+ de + " "+ cen);
+		// intercambiaremos los 3 elementos entre si para colocar la mediana en el medio
+		if ( elements[iz] > elements[cen] )
+			intercambiar(iz,cen);
+		if ( elements[iz] > elements[de] )
+			intercambiar(iz,de);
+		if ( elements[cen] > elements[de] )
+			intercambiar(cen,de);
+		return cen;
+	}
+
+
+
+*****************************************SELECTION ************************************
+	public void ordenar() {
+
+	    for (int i = 0; i < super.elements.length - 1; i++) {
+		      int minIndex = i;
+	
+		      for (int j = i + 1; j < super.elements.length; j++) {
+	
+			        // To sort in descending order, change > to < in this line.
+			        // Select the minimum element in each loop.
+			        if (super.elements[j] < super.elements[minIndex]) {
+			        	minIndex = j;
+			        }
+		      }
+		      	
+		      // put min at the correct position
+		      int temp = super.elements[i];
+		      super.elements[i] = super.elements[minIndex];
+		      super.elements[minIndex] = temp;
+	    }
+	}  
+
